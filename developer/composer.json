@@ -2,7 +2,7 @@
   "name": "docker-demo",
   "type": "wordpress-theme",
   "config": {
-    "vendor-dir": "./../public_html/wp-content/themes/twentyseventeen/functions/vendor"
+    "vendor-dir": "./../public/wp-content/themes/twentyseventeen/functions/vendor"
   },
   "require": {
     "composer/installers": "~1.0",
