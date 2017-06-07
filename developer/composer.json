@@ -1,0 +1,16 @@
+{
+  "name": "docker-demo",
+  "type": "wordpress-theme",
+  "config": {
+    "vendor-dir": "./../public_html/wp-content/themes/beursbrink/functions/vendor"
+  },
+  "require": {
+    "composer/installers": "~1.0",
+    "guzzlehttp/guzzle": "~6.0",
+    "nesbot/carbon": "^1.21"
+  },
+  "autoload": {
+    "psr-4": {
+    }
+  }
+}
