@@ -23,7 +23,7 @@ if [ $# -gt 0 ];then
     elif [ "$1" == "composer" ]; then
         shift 1
         $COMPOSE run --rm \
-            -w /var/www/html \
+            -w /var/www/html/developer \
             app \
             composer "$@"
 
@@ -32,32 +32,9 @@ if [ $# -gt 0 ];then
     elif [ "$1" == "test" ]; then
         shift 1
         $COMPOSE run --rm \
-            -w /var/www/html \
+            -w /var/www/html/developer \
             app \
             ./vendor/bin/phpunit "$@"
-
-    # If "npm" is used, run npm
-    # from our node container
-    elif [ "$1" == "npm" ]; then
-        shift 1
-        $COMPOSE run --rm \
-            -w /var/www/html \
-            node \
-            npm "$@"
-
-    # If "gulp" is used, run gulp
-    # from our node container
-    elif [ "$1" == "gulp" ]; then
-        shift 1
-        $COMPOSE run --rm \
-            -w /var/www/html \
-            node \
-            ./node_modules/.bin/gulp "$@"
-    # Else, pass-thru args to docker-compose
-    else
-        $COMPOSE "$@"
-    fi
-
 else
     $COMPOSE ps
 fi
